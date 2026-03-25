@@ -4,7 +4,7 @@ import User from "../models/User.js";
 
 const JWT_SECRET = process.env.JWT_SECRET || "supersecretkey";
 
-// ✅ Signup
+// Signup
 export const signup = async (req, res) => {
   try {
     const { name, email, password } = req.body;
@@ -25,7 +25,7 @@ export const signup = async (req, res) => {
   }
 };
 
-// ✅ Login
+// Login
 export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
@@ -44,7 +44,7 @@ export const login = async (req, res) => {
   }
 };
 
-// ✅ Protected route test
+// Protected route test
 export const profile = async (req, res) => {
   res.json({ success: true, message: "Welcome to your profile!", user: req.user });
 };
