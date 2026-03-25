@@ -36,13 +36,13 @@ export default function SessionsPage() {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
-      console.log("✅ Deleted:", data);
+      console.log("Deleted:", data);
       // Update UI
       const updated = { ...sessions };
       delete updated[id];
       setSessions(updated);
     } catch (err) {
-      console.error("❌ Error deleting session:", err);
+      console.error("Error deleting session:", err);
     }
   };
 
