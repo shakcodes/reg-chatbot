@@ -4,7 +4,7 @@ import { getEmbeddings } from "../services/embeddings.js";
 
 dotenv.config();
 
-// 👇 no-op embedder: default embedder ko disable kar deta hai
+// no-op embedder: default embedder ko disable kar deta hai
 const noOpEmbeddingFunction = {
   embedDocuments: async () => {
     throw new Error("No embedder configured. Provide embeddings explicitly.");
@@ -36,15 +36,15 @@ const run = async () => {
     await collection.add({
       ids: [d.id],
       documents: [d.text],
-      embeddings: [emb], // 👈 hum khud embeddings de rahe hain
+      embeddings: [emb], // hum khud embeddings de rahe hain
     });
-    console.log("✅ Ingested:", d.id);
+    console.log("Ingested:", d.id);
   }
 
-  console.log("🎉 Dummy ingestion complete");
+  console.log("Dummy ingestion complete");
 };
 
 run().catch((e) => {
-  console.error("❌ Ingestion error:", e);
+  console.error("Ingestion error:", e);
   process.exit(1);
 });
