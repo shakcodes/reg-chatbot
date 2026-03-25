@@ -15,7 +15,7 @@ export default function Navbar() {
     <nav className="bg-blue-600 text-white px-6 py-3 shadow-md flex justify-between items-center">
       {/* Left: Brand */}
       <Link to="/" className="text-xl font-bold">
-        🤖 RAG Chatbot
+        RAG Chatbot
       </Link>
 
       {/* Right: Links */}
