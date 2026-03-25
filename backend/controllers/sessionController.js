@@ -9,7 +9,7 @@ const redisKey = (userId, sessionId) => `chat:${userId}:${sessionId}`;
 
 export const getSession = async (req, res) => {
   try {
-    const userId = req.user._id; // ✅ from protect middleware
+    const userId = req.user._id; // from protect middleware
     const { sessionId } = req.params;
     const key = redisKey(userId, sessionId);
 
@@ -43,7 +43,7 @@ export const getAllSessions = async (req, res) => {
 
     res.json({ userId, sessions });
   } catch (err) {
-    console.error("❌ getAllSessions:", err);
+    console.error("getAllSessions:", err);
     res.status(500).json({ error: "Failed to fetch sessions" });
   }
 };
