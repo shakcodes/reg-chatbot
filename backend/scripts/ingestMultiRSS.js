@@ -66,6 +66,6 @@ const run = async () => {
 };
 
 run().catch((e) => {
-  console.error("❌ Ingestion error:", e);
+  console.error("Ingestion error:", e);
   process.exit(1);
 });
