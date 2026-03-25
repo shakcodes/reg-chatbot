@@ -8,10 +8,10 @@ export const connectRedis = async () => {
       url: process.env.REDIS_URL || "redis://localhost:6379",
     });
 
-    redisClient.on("error", (err) => console.error("❌ Redis Error:", err));
+    redisClient.on("error", (err) => console.error("Redis Error:", err));
 
     await redisClient.connect();
-    console.log("✅ Redis connected");
+    console.log("Redis connected");
   }
 
   return redisClient;
