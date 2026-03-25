@@ -6,7 +6,7 @@ import { getEmbeddings } from "../services/embeddings.js";
 dotenv.config();
 const parser = new Parser();
 
-// ✅ Multi-feed list (Global + Indian)
+// Multi-feed list (Global + Indian)
 const FEEDS = [
   { name: "BBC", url: "http://feeds.bbci.co.uk/news/world/rss.xml" },
   { name: "Guardian", url: "https://www.theguardian.com/world/rss" },
@@ -38,9 +38,9 @@ const run = async () => {
 
   for (const feed of FEEDS) {
     try {
-      console.log(`🌐 Fetching from ${feed.name}...`);
+      console.log(`Fetching from ${feed.name}...`);
       const parsed = await parser.parseURL(feed.url);
-      console.log(`✅ ${feed.name}: ${parsed.items.length} articles found`);
+      console.log(`${feed.name}: ${parsed.items.length} articles found`);
 
       let i = 0;
       for (const item of parsed.items.slice(0, 10)) { // sirf pehle 10 lete hain
@@ -54,15 +54,15 @@ const run = async () => {
           metadatas: [{ link: item.link, source: feed.name }],
         });
 
-        console.log(`✅ Ingested (${feed.name}): ${item.title}`);
+        console.log(`Ingested (${feed.name}): ${item.title}`);
         i++;
       }
     } catch (err) {
-      console.error(`❌ Error fetching ${feed.name}:`, err.message);
+      console.error(`Error fetching ${feed.name}:`, err.message);
     }
   }
 
-  console.log("🎉 Multi-source RSS ingestion complete!");
+  console.log("Multi-source RSS ingestion complete!");
 };
 
 run().catch((e) => {
