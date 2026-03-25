@@ -19,7 +19,7 @@ export default function SessionDetailPage() {
         const data = await res.json();
         setHistory(data.history || []);
       } catch (err) {
-        console.error("❌ Error fetching session history:", err);
+        console.error("Error fetching session history:", err);
       } finally {
         setLoading(false);
       }
