@@ -14,7 +14,7 @@ export default function App() {
     <div className="h-screen flex flex-col">
       {/* Navbar */}
       <nav className="bg-blue-600 text-white p-4 flex justify-between">
-        <div className="font-bold">🤖 RAG Chatbot</div>
+        <div className="font-bold">RAG Chatbot</div>
         <div className="space-x-4">
           {token && <Link to="/sessions">My Sessions</Link>}
           {!token ? (
