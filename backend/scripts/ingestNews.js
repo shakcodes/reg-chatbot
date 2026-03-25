@@ -41,13 +41,13 @@ const runIngestion = async () => {
         embeddings: [embedding],
       });
 
-      console.log(`✅ Ingested: ${article.title}`);
+      console.log(`Ingested: ${article.title}`);
     }
 
-    console.log("🎉 Ingestion complete!");
+    console.log("Ingestion complete!");
 
   } catch (err) {
-    console.error("❌ Ingestion error:", err);
+    console.error("Ingestion error:", err);
   }
 };
 
