@@ -15,7 +15,7 @@ function getSessionIdFromQuestion(question) {
 
 export const chatWithBot = async (req, res) => {
   try {
-    const userId = req.user._id; // ✅ from protect middleware
+    const userId = req.user._id; // from protect middleware
     const { question } = req.body;
 
     if (!question) {
@@ -54,7 +54,7 @@ export const chatWithBot = async (req, res) => {
     // 7) Response
     res.json({ success: true, sessionId, answer, context, history: newHistory });
   } catch (e) {
-    console.error("❌ chatWithBot:", e);
+    console.error("chatWithBot:", e);
     res.status(500).json({ success: false, message: e.message });
   }
 };
